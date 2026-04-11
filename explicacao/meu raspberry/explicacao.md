@@ -32,4 +32,8 @@ fotos do setup:
 
 ![alt text](image-3.png)
 
+pinout raspberry
+
+![alt text](image-4.png)
+
 LER A README.md
