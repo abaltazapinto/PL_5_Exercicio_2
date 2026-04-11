@@ -42,14 +42,17 @@ O sistema está dividido em duas partes:
 
 Foram utilizados os seguintes pinos do Raspberry Pi (numeração física):
 
-- Pino 5 → GPIO3 
-- Pino 7 → GPIO4 
+- Pino 32 → GPIO12 
+- Pino 30 → GND 
 
-A escolha segue o setup realizado em aula, garantindo consistência entre ambiente de desenvolvimento e testes.
+A escolha primeiramente seguiu o setup realizado em aula, garantindo consistência entre ambiente de desenvolvimento e testes.
 
 O LED foi ligado:
 - GPIO4 (pino 7) → resistência → LED → GND
 
+
+DEPOIS MUDOU
+- GPIO12 (pino32) -> resistencia -> LED -> GND
 ---
 
 ## Compilação
