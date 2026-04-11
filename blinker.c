@@ -27,8 +27,6 @@ MODULE_PARM_DESC(led_status, "Port status");
 
 module_param(blink_delay, uint, 0444);
 MODULE_PARM_DESC(blink_delay, "Half period in jiffies");
-
-
 static int blinker_open(struct inode *inode, struct file *filp)
 {
   if (device_open)
@@ -131,6 +129,9 @@ static void my_timer_func(struct timer_list *unused){
 static int __init blinker_init(void)
 {
   int result;
+;
+printk(KERN_WARNING
+"ANDRE_TEST_BLINKER_INIT\n");
 
 	
   /* 
@@ -151,9 +152,6 @@ static int __init blinker_init(void)
   printk(KERN_WARNING "Blinker: major=%d HZ: %d\n", blinker_major, HZ);    
     
 
-  timer_setup(&my_timer, my_timer_func, 0);
-  my_timer.expires = jiffies + blink_delay;
-  add_timer(&my_timer);
 
   blinker_class = class_create(CLASS_NAME);
   if (IS_ERR(blinker_class)){
@@ -168,7 +166,7 @@ static int __init blinker_init(void)
     unregister_chrdev(blinker_major, MODULE_NAME);
     return PTR_ERR(blinker_device);
   }  
-  result = gpio12_init_output();
+
   if (result) {
     device_destroy(blinker_class, MKDEV(blinker_major,0));
     class_destroy(blinker_class);
@@ -176,6 +174,15 @@ static int __init blinker_init(void)
     unregister_chrdev(blinker_major, MODULE_NAME);
     return result;
   }
+  result = gpio12_init_output();
+	if (result)
+		return result;
+//	gpio12_set(1);
+
+timer_setup(&my_timer, my_timer_func, 0);
+  my_timer.expires = jiffies + blink_delay;
+  add_timer(&my_timer);
+
   return 0;
 }
 
