@@ -14,7 +14,7 @@
 *.mod.*
 *.symvers
 *.order
-
+*c.swp
 # kernel build leftovers
 .tmp_versions/
 
