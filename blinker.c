@@ -132,9 +132,7 @@ static int __init blinker_init(void)
 {
   int result;
 
-	result = gpio12_init_output();
-	if (result)
-		return result;
+	
   /* 
   linux/fs.h
   
@@ -167,9 +165,17 @@ static int __init blinker_init(void)
   if (IS_ERR(blinker_device)){
     class_destroy(blinker_class);
     timer_delete(&my_timer);
-    unregister_chrdev(blinker_major, MODULE_NAME); 
+    unregister_chrdev(blinker_major, MODULE_NAME);
+    return PTR_ERR(blinker_device);
   }  
-  
+  result = gpio12_init_output();
+  if (result) {
+    device_destroy(blinker_class, MKDEV(blinker_major,0));
+    class_destroy(blinker_class);
+    timer_delete(&my_timer);
+    unregister_chrdev(blinker_major, MODULE_NAME);
+    return result;
+  }
   return 0;
 }
 
