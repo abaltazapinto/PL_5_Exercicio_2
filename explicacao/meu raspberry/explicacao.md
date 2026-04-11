@@ -36,4 +36,8 @@ pinout raspberry
 
 ![alt text](image-4.png)
 
+
+video do exercicio com led a piscar 
+"whatsApp Video" 
+
 LER A README.md
