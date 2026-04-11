@@ -7,7 +7,7 @@
 #define GPIO_OFFSET     0x00200000UL
 #define GPIO_BASE_PHYS  (PERIPHERAL_BASE + GPIO_OFFSET)
 #define GPIO_BLOCK_SIZE 4096
-#define GPIO12          12
+#define GPIO12          5
 
 static void __iomem *gpio_base;
 
