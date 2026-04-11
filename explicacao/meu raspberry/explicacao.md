@@ -1,4 +1,4 @@
-fotos do setup:
+fotos do setup imitar a aula:
 
 ![alt text](image.png)
 
@@ -37,7 +37,16 @@ pinout raspberry
 ![alt text](image-4.png)
 
 
-video do exercicio com led a piscar 
+
+    setup de casa:
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+    video do exercicio com led a piscar 
+
 "whatsApp Video" 
 
 LER A README.md
