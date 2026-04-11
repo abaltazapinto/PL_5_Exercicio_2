@@ -1,7 +1,7 @@
 #include <linux/module.h> 
 #include <linux/cdev.h>
 #include <linux/version.h>
-
+#include "gpio.h"
 #include <linux/fs.h>
 
 
@@ -118,7 +118,9 @@ static struct file_operations blinker_fops = {
 
 static void my_timer_func(struct timer_list *unused){
   led_status = ~led_status;
-  
+
+  gpio12_set(led_status ? 1 : 0);
+
   printk(KERN_WARNING "blinker: %x", led_status);
   
   my_timer.expires += blink_delay;
@@ -130,6 +132,9 @@ static int __init blinker_init(void)
 {
   int result;
 
+	result = gpio12_init_output();
+	if (result)
+		return result;
   /* 
   linux/fs.h
   
@@ -175,7 +180,8 @@ static void __exit blinker_exit(void)
   
   timer_delete(&my_timer);
 
-  unregister_chrdev(blinker_major, MODULE_NAME); 
+  unregister_chrdev(blinker_major, MODULE_NAME);
+	gpio12_cleanup(); 
 }
 
 module_init(blinker_init);  
