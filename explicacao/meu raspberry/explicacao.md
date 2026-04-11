@@ -43,6 +43,7 @@ pinout raspberry
 ![alt text](image-5.png)
 
 ![alt text](image-6.png)
+
 ![alt text](image-7.png)
 
     video do exercicio com led a piscar 

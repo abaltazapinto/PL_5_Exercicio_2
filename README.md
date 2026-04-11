@@ -141,6 +141,20 @@ Testes realizados:
 
 ---
 
+## Debug & Notas Importantes
+
+Durante o desenvolvimento foram encontrados alguns problemas relevantes:
+
+- Inicialmente o GPIO estava mal definido (`#define GPIO12 5`), o que fazia o LED responder no pino errado.
+- Foi necessário garantir sempre o ciclo completo:
+  `make clean && make → rmmod → insmod`, pois alterações no código não têm efeito se o módulo antigo estiver carregado.
+- O uso de `dmesg` foi essencial para confirmar que o timer do kernel estava a executar corretamente (valores a alternar).
+- A tentativa de usar `/sys/class/gpio` falhou porque esta interface está deprecated em kernels recentes.
+- O teste com `rmmod` confirmou que o cleanup está correto (LED desliga imediatamente).
+
+Conclusão:
+O comportamento do LED (apagado, fixo, a piscar) foi utilizado como principal ferramenta de debugging, permitindo validar o funcionamento do driver ao nível do hardware.
+
 ## Conclusão
 
 O módulo permite:
