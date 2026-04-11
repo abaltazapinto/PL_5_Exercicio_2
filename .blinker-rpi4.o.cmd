@@ -1,1 +1,0 @@
-savedcmd_/home/abaltaza/rpi_lab/blinker-rpi4.o := aarch64-linux-gnu-ld -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments   -r -o /home/abaltaza/rpi_lab/blinker-rpi4.o @/home/abaltaza/rpi_lab/blinker-rpi4.mod 

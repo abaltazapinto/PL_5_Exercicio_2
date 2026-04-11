@@ -1,1 +1,0 @@
-savedcmd_/home/abaltaza/rpi_lab/blinker-rpi4.ko := aarch64-linux-gnu-ld -r -EL  -maarch64elf -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/arm64/module.lds -o /home/abaltaza/rpi_lab/blinker-rpi4.ko /home/abaltaza/rpi_lab/blinker-rpi4.o /home/abaltaza/rpi_lab/blinker-rpi4.mod.o /home/abaltaza/rpi_lab/.module-common.o

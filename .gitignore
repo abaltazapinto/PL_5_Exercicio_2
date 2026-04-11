@@ -6,3 +6,27 @@
 *.o
 *.so
 *.out
+*.cmd
+
+# build artifacts
+*.o
+*.ko
+*.mod.*
+*.symvers
+*.order
+
+# kernel build leftovers
+.tmp_versions/
+
+# binaries
+blinker
+blinker-*
+
+# logs / outputs
+*.out
+
+# compressed
+*.zip
+
+# editor
+.vscode/
