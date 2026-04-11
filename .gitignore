@@ -1,0 +1,8 @@
+*.deb 
+
+
+// Linux
+
+*.o
+*.so
+*.out
