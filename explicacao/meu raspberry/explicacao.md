@@ -50,4 +50,9 @@ pinout raspberry
 
 "whatsApp Video" 
 
+explicacao de dia 14 de abril imagens 
+
+
+
+
 LER A README.md
