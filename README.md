@@ -1,5 +1,9 @@
 # PL5 - Exercício II: Kernel Module Blinker (Raspberry Pi 4)
 
+## PINOUT
+
+![alt text](image.png)
+
 ## Objetivo
 
 Desenvolver um módulo de kernel para o Raspberry Pi 4 capaz de controlar um LED através de um GPIO, permitindo configurar dinamicamente o período de blinking via interface `/dev/blinker`.
@@ -47,9 +51,8 @@ Foram utilizados os seguintes pinos do Raspberry Pi (numeração física):
 
 A escolha primeiramente seguiu o setup realizado em aula, garantindo consistência entre ambiente de desenvolvimento e testes.
 
-O LED foi ligado:
+Na aula O LED estava ligado:
 - GPIO4 (pino 7) → resistência → LED → GND
-
 
 DEPOIS MUDOU
 - GPIO12 (pino32) -> resistencia -> LED -> GND
