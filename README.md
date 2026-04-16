@@ -104,11 +104,6 @@ dmesg -W
 sudo cat /dev/blinker
 ```
 
-Exemplo:
-
-```
-2000
-```
 
 ---
 
@@ -118,32 +113,8 @@ Exemplo:
 echo 1000 | sudo tee /dev/blinker
 ```
 
-ou
-
-```bash
-sudo sh -c "echo 1000 > /dev/blinker"
-```
-
 ---
 
-## Validação
-
-Testes realizados:
-
-| Ação                       | Resultado       |
-| -------------------------- | --------------- |
-| `cat /dev/blinker` inicial | 2000 ms         |
-| `write 1000`               | LED mais rápido |
-| `cat` após write           | 1000 ms         |
-| `write 4000`               | LED mais lento  |
-| `cat` final                | 4000 ms         |
-
-✔ Timer funcional
-✔ GPIO controlado corretamente
-✔ Interface `/dev` operacional
-✔ Comunicação user ↔ kernel validada
-
----
 
 ## Hardware
 
@@ -155,16 +126,7 @@ Testes realizados:
 
 ---
 
-## Debug & Notas Importantes
-
-Durante o desenvolvimento foram encontrados alguns problemas relevantes:
-
-- Inicialmente o GPIO estava mal definido (`#define GPIO12 5`), o que fazia o LED responder no pino errado.
-- Foi necessário garantir sempre o ciclo completo:
-  `make clean && make → rmmod → insmod`, pois alterações no código não têm efeito se o módulo antigo estiver carregado.
-- O uso de `dmesg` foi essencial para confirmar que o timer do kernel estava a executar corretamente (valores a alternar).
-- A tentativa de usar `/sys/class/gpio` falhou porque esta interface está deprecated em kernels recentes.
-- O teste com `rmmod` confirmou que o cleanup está correto (LED desliga imediatamente).
+## Notas Importantes
 
 Conclusão:
 O comportamento do LED (apagado, fixo, a piscar) foi utilizado como principal ferramenta de debugging, permitindo validar o funcionamento do driver ao nível do hardware.
