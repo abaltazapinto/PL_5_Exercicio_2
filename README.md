@@ -1,5 +1,13 @@
 # PL5 - Exercício II: Kernel Module Blinker (Raspberry Pi 4)
 
+* blinker-rpi4.c
+* Programa referente à ficha PL5 – Exercício II
+* Implementação de um Loadable Kernel Module (LKM) com timer para controlo do estado de um GPIO no Raspberry Pi 4
+* Permite leitura e escrita do período de comutação através de um character device (/dev/blinker)
+* Created: 11/04/2026
+* Author : Ines Santos (1140623), André Pinto (1200209) e Gabriel Lopes (1252630)
+
+
 ## PINOUT
 
 ![alt text](image.png)
