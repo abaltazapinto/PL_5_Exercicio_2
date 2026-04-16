@@ -7,7 +7,6 @@
 * Created: 11/04/2026
 * Author : Ines Santos (1140623), André Pinto (1200209) e Gabriel Lopes (1252630)
 
-
 ## PINOUT
 
 ![alt text](image.png)
@@ -62,7 +61,7 @@ A escolha primeiramente seguiu o setup realizado em aula, garantindo consistênc
 Na aula O LED estava ligado:
 - GPIO4 (pino 7) → resistência → LED → GND
 
-DEPOIS MUDOU
+DEPOIS MUDOU SE
 - GPIO12 (pino32) -> resistencia -> LED -> GND
 ---
 
@@ -71,13 +70,6 @@ DEPOIS MUDOU
 ```bash
 make
 ```
-
-Gera:
-
-```bash
-blinker-rpi4.ko
-```
-
 ---
 
 ## Execução
@@ -104,18 +96,7 @@ dmesg -W
 sudo cat /dev/blinker
 ```
 
-
 ---
-
-### WRITE (alterar período)
-
-```bash
-echo 1000 | sudo tee /dev/blinker
-```
-
----
-
-
 ## Hardware
 
 * Raspberry Pi 4
